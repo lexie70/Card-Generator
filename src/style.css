@@ -3,3 +3,12 @@
 body {
   background-color: green;
 }
+#addSuit1 {
+  font-size: 80px;
+}
+#addSuit2 {
+  font-size: 80px;
+}
+#addNumber {
+  font-size: 80px;
+}

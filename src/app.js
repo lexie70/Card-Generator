@@ -5,36 +5,43 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-const iconos = ["♦", "♥", "♠", "♣"];
-
-function randomIcon() {
-  let test1 = Math.floor(Math.random() * iconos.length);
-  return iconos[test1];
-}
-
-function randonNumber() {
-  const numeros = [
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K"
-  ];
-  let test2 = Math.floor(Math.random() * numeros.length);
-  return numeros[test2];
-}
+const suit = ["♦", "♥", "♠", "♣"];
+const number = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+];
 
 window.onload = () => {
-  document.querySelector(".addIcon").innerHTML = randomIcon();
-  document.querySelector(".addIcon2").innerHTML = randomIcon();
-  document.querySelector(".addNumber").innerHTML = randonNumber();
+  let randomSuit = Math.floor(Math.random() * suit.length);
+  let randomNumber = Math.floor(Math.random() * number.length);
+
+  let colors =
+    suit[randomSuit] === "♠" || suit[randomSuit] === "♣" ? "black" : "red";
+
+  document.getElementById("addSuit1").style.color = colors;
+
+  document.getElementById("addSuit2").style.color = colors;
+
+  let suit1 = document.querySelector("#addSuit1");
+  suit1.innerHTML = suit[randomSuit];
+
+  let suit2 = document.querySelector("#addSuit2");
+  suit2.innerHTML = suit[randomSuit];
+
+  let number1 = document.querySelector("#addNumber");
+  number1.innerHTML = number[randomNumber];
 };
+
+onload();
